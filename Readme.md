@@ -40,17 +40,25 @@ etl-importer
 
 ### Executando a aplicação
 
-bash docker compose up -d
+```bash
+docker compose up -d
+```
 
 ```bash
 ./mvnw spring-boot:run
 ```
 
-No Windows:
+#### No Windows:
+```bash
 mvnw.cmd spring-boot:run
+```
 
 ### Build do projeto
+```bash
 ./mvnw clean package
+```
 
-🧪 Testes
+### 🧪 Testes
+```bash
 ./mvnw test
+```
