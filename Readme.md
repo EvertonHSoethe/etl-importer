@@ -14,7 +14,24 @@ Aplicação responsável por processos de ETL (Extract, Transform, Load), desenv
 - **Docker Compose** — Orquestração de serviços auxiliares (banco de dados, etc.) via `compose.yaml`
 
 ## 📁 Estrutura do Projeto
-etl-importer ├── src │ ├── main │ │ ├── java/io/github/evertonsoethe/etlimporter │ │ │ └── EtlImporterApplication.java │ │ └── resources │ └── test ├── compose.yaml ├── pom.xml ├── mvnw / mvnw.cmd └── HELP.md## ▶️ Como Executar
+etl-importer
+├── src
+│   ├── main
+│   │   ├── java
+│   │   │   └── io/github/evertonsoethe/etlimporter
+│   │   │       └── EtlImporterApplication.java
+│   │   └── resources
+│   └── test
+│       └── java
+│           └── io/github/evertonsoethe/etlimporter
+│               ├── EtlImporterApplicationTests.java
+│               ├── TestEtlImporterApplication.java
+│               └── TestcontainersConfiguration.java
+├── compose.yaml
+├── pom.xml
+├── mvnw / mvnw.cmd
+└── HELP.md
+## ▶️ Como Executar
 
 ### Pré-requisitos
 
