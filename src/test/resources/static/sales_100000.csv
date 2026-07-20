@@ -1,0 +1,8 @@
+sale_id,sale_date,customer_id,customer_name,product_id,product_name,category,quantity,unit_price,total_price,payment_method,status
+1,2024-01-15,100,John Doe,P001,Mouse Gamer,Perifericos,2,89.90,179.80,PIX,COMPLETED
+2,2024-02-20,101,Jane Smith,P002,Teclado Mecanico,Perifericos,1,299.90,299.90,CREDIT_CARD,COMPLETED
+3,2024-03-10,102,Carlos Santos,P003,Monitor 27,Monitores,1,1500.00,1500.00,BOLETO,PENDING
+4,2024-04-05,103,Maria Oliveira,P004,SSD 1TB,Armazenamento,3,350.00,1050.00,DEBIT_CARD,CANCELLED
+5,2024-05-22,104,Pedro Costa,P005,Webcam HD,Perifericos,1,189.90,189.90,PIX,COMPLETED
+6,2024-06-01,105,Ana Lima,P006,Headset,Perifericos,0,120.00,0.00,PIX,COMPLETED
+7,2024-07-15,106,Lucas Souza,P007,RAM 16GB,Memoria,2,250.00,500.00,INVALID_METHOD,PENDING

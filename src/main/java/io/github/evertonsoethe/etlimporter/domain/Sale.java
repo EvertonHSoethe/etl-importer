@@ -36,7 +36,7 @@ public class Sale {
     private String customerName;
 
     @Column(nullable = false)
-    private Long productId;
+    private String productId;
 
     @Column(nullable = false)
     private String productName;

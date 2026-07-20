@@ -5,7 +5,7 @@ CREATE TABLE sale
     sale_date      DATE NOT NULL,
     customer_id    BIGINT,
     customer_name  VARCHAR(255) NOT NULL,
-    product_id     BIGINT,
+    product_id     VARCHAR(255),
     product_name   VARCHAR(255) NOT NULL,
     category       VARCHAR(255) NOT NULL,
     quantity       INTEGER,
