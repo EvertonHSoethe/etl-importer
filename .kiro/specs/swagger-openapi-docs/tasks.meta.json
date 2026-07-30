@@ -1,0 +1,107 @@
+{
+  "pbtResults": {},
+  "executionHistory": {
+    "1. Adicionar dependência springdoc-openapi-starter-webmvc-ui ao pom.xml": [
+      {
+        "executionId": "f544bb2f-5b14-44b9-b7bc-b1170f0b8057",
+        "chatSessionId": "sess_1eebbcc5-ee40-441d-b1a3-5edd00c44dda",
+        "timestamp": 1785383581531
+      },
+      {
+        "executionId": "f544bb2f-5b14-44b9-b7bc-b1170f0b8057",
+        "chatSessionId": "sess_1eebbcc5-ee40-441d-b1a3-5edd00c44dda",
+        "timestamp": 1785383589202
+      },
+      {
+        "executionId": "f544bb2f-5b14-44b9-b7bc-b1170f0b8057",
+        "chatSessionId": "sess_1eebbcc5-ee40-441d-b1a3-5edd00c44dda",
+        "timestamp": 1785383753542
+      }
+    ],
+    "2. Criar classe de configuração OpenApiConfig": [
+      {
+        "executionId": "f544bb2f-5b14-44b9-b7bc-b1170f0b8057",
+        "chatSessionId": "sess_1eebbcc5-ee40-441d-b1a3-5edd00c44dda",
+        "timestamp": 1785383581898
+      },
+      {
+        "executionId": "f544bb2f-5b14-44b9-b7bc-b1170f0b8057",
+        "chatSessionId": "sess_1eebbcc5-ee40-441d-b1a3-5edd00c44dda",
+        "timestamp": 1785383757035
+      },
+      {
+        "executionId": "f544bb2f-5b14-44b9-b7bc-b1170f0b8057",
+        "chatSessionId": "sess_1eebbcc5-ee40-441d-b1a3-5edd00c44dda",
+        "timestamp": 1785383903493
+      }
+    ],
+    "3. Adicionar propriedades do SpringDoc ao application.properties": [
+      {
+        "executionId": "f544bb2f-5b14-44b9-b7bc-b1170f0b8057",
+        "chatSessionId": "sess_1eebbcc5-ee40-441d-b1a3-5edd00c44dda",
+        "timestamp": 1785383581933
+      },
+      {
+        "executionId": "f544bb2f-5b14-44b9-b7bc-b1170f0b8057",
+        "chatSessionId": "sess_1eebbcc5-ee40-441d-b1a3-5edd00c44dda",
+        "timestamp": 1785383907033
+      },
+      {
+        "executionId": "f544bb2f-5b14-44b9-b7bc-b1170f0b8057",
+        "chatSessionId": "sess_1eebbcc5-ee40-441d-b1a3-5edd00c44dda",
+        "timestamp": 1785384009974
+      }
+    ],
+    "4. Adicionar anotações de documentação ao ImportController": [
+      {
+        "executionId": "f544bb2f-5b14-44b9-b7bc-b1170f0b8057",
+        "chatSessionId": "sess_1eebbcc5-ee40-441d-b1a3-5edd00c44dda",
+        "timestamp": 1785383581992
+      },
+      {
+        "executionId": "f544bb2f-5b14-44b9-b7bc-b1170f0b8057",
+        "chatSessionId": "sess_1eebbcc5-ee40-441d-b1a3-5edd00c44dda",
+        "timestamp": 1785384013634
+      },
+      {
+        "executionId": "f544bb2f-5b14-44b9-b7bc-b1170f0b8057",
+        "chatSessionId": "sess_1eebbcc5-ee40-441d-b1a3-5edd00c44dda",
+        "timestamp": 1785384161540
+      }
+    ],
+    "5. Adicionar anotações @Schema ao modelo ImportExecution": [
+      {
+        "executionId": "f544bb2f-5b14-44b9-b7bc-b1170f0b8057",
+        "chatSessionId": "sess_1eebbcc5-ee40-441d-b1a3-5edd00c44dda",
+        "timestamp": 1785383582021
+      },
+      {
+        "executionId": "f544bb2f-5b14-44b9-b7bc-b1170f0b8057",
+        "chatSessionId": "sess_1eebbcc5-ee40-441d-b1a3-5edd00c44dda",
+        "timestamp": 1785384165115
+      },
+      {
+        "executionId": "f544bb2f-5b14-44b9-b7bc-b1170f0b8057",
+        "chatSessionId": "sess_1eebbcc5-ee40-441d-b1a3-5edd00c44dda",
+        "timestamp": 1785384307649
+      }
+    ],
+    "6. Checkpoint - Verificar integração completa": [
+      {
+        "executionId": "f544bb2f-5b14-44b9-b7bc-b1170f0b8057",
+        "chatSessionId": "sess_1eebbcc5-ee40-441d-b1a3-5edd00c44dda",
+        "timestamp": 1785383582047
+      },
+      {
+        "executionId": "f544bb2f-5b14-44b9-b7bc-b1170f0b8057",
+        "chatSessionId": "sess_1eebbcc5-ee40-441d-b1a3-5edd00c44dda",
+        "timestamp": 1785384311223
+      },
+      {
+        "executionId": "f544bb2f-5b14-44b9-b7bc-b1170f0b8057",
+        "chatSessionId": "sess_1eebbcc5-ee40-441d-b1a3-5edd00c44dda",
+        "timestamp": 1785384445598
+      }
+    ]
+  }
+}
