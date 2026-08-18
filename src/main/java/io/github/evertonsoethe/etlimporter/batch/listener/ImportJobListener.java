@@ -25,8 +25,10 @@ public class ImportJobListener implements JobExecutionListener {
     public void beforeJob(JobExecution jobExecution) {
         log.info("Starting import job - creating ImportExecution record");
 
+        String originalFilename = jobExecution.getJobParameters().getString("originalFilename");
+
         ImportExecution execution = ImportExecution.builder()
-                .filename("sales_100000.csv")
+                .filename(originalFilename != null ? originalFilename : "unknown.csv")
                 .status(ExecutionStatusEnum.RUNNING)
                 .totalLines(0L)
                 .processedLines(0L)
@@ -48,13 +50,23 @@ public class ImportJobListener implements JobExecutionListener {
         ImportExecution execution = importExecutionRepository.findById(executionId)
                 .orElseThrow(() -> new IllegalStateException("ImportExecution not found: " + executionId));
 
+        // Aggregate counters from partition worker step executions only.
+        // In Spring Batch partitioning, worker steps contain ":" in their name
+        // (e.g., "workerStep:partition-0"), while the master step does not.
         long writeCount = jobExecution.getStepExecutions().stream()
+                .filter(se -> se.getStepName().contains(":"))
                 .mapToLong(StepExecution::getWriteCount)
                 .sum();
 
         long skipCount = jobExecution.getStepExecutions().stream()
+                .filter(se -> se.getStepName().contains(":"))
                 .mapToLong(StepExecution::getSkipCount)
                 .sum();
+
+        // Check if any partition worker failed (irrecoverable error)
+        boolean hasFailedPartition = jobExecution.getStepExecutions().stream()
+                .filter(se -> se.getStepName().contains(":"))
+                .anyMatch(se -> se.getStatus() == BatchStatus.FAILED);
 
         execution.setSuccessLines(writeCount);
         execution.setErrorLines(skipCount);
@@ -63,12 +75,17 @@ public class ImportJobListener implements JobExecutionListener {
         execution.setFinishedDate(LocalDateTime.now());
 
         // Calculate duration in milliseconds
-        long startTime = jobExecution.getStartTime() != null ? jobExecution.getStartTime().atZone(ZoneId.systemDefault()).toInstant().toEpochMilli() : 0;
+        long startTime = jobExecution.getStartTime() != null
+                ? jobExecution.getStartTime().atZone(ZoneId.systemDefault()).toInstant().toEpochMilli()
+                : 0;
         long endTime = System.currentTimeMillis();
         execution.setDuration(endTime - startTime);
 
-        if (jobExecution.getStatus() == BatchStatus.COMPLETED) {
+        // Determine final status based on partition outcomes
+        if (jobExecution.getStatus() == BatchStatus.COMPLETED && !hasFailedPartition) {
             execution.setStatus(ExecutionStatusEnum.COMPLETED);
+        } else if (jobExecution.getStatus() == BatchStatus.COMPLETED && hasFailedPartition) {
+            execution.setStatus(ExecutionStatusEnum.COMPLETED_WITH_ERRORS);
         } else {
             execution.setStatus(ExecutionStatusEnum.FAILED);
         }
