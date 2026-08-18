@@ -31,3 +31,13 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Build & Test Output ###
+build-output.txt
+build-error.txt
+build-result.txt
+test-output*.txt
+test-error*.txt
+test-results.txt
+classpath.txt
+.jqwik-database

@@ -20,7 +20,8 @@ import java.time.LocalDateTime;
 public class Sale {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sale_seq")
+    @SequenceGenerator(name = "sale_seq", sequenceName = "sale_id_seq", allocationSize = 500)
     private Long id;
 
     @Column(name = "sale_id", nullable = false)

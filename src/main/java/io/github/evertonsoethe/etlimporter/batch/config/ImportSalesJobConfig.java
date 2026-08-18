@@ -14,19 +14,14 @@ import org.springframework.context.annotation.Configuration;
 public class ImportSalesJobConfig {
 
     private final JobRepository jobRepository;
-    private final Step importSalesStep;
+    private final Step partitionedImportStep;
     private final JobExecutionListener importJobListener;
 
     @Bean
     public Job importSalesJob() {
-
         return new JobBuilder("importSalesJob", jobRepository)
-
                 .listener(importJobListener)
-
-                .start(importSalesStep)
-
+                .start(partitionedImportStep)
                 .build();
     }
-
 }
